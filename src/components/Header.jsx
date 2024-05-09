@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { HiEllipsisVertical, HiMiniBars3BottomRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { GifState } from "../context/GifContext";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(false);
+
+  const { giphyFetch, ilter, setFilter, favourites } = GifState();
+
   return (
     <nav>
       <div className="relative flex gap-4 justify-between items-center mb-2">
